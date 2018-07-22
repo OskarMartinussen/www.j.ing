@@ -1,0 +1,36 @@
+{
+  "name": "WWW.J.ing",
+  "description": "An app that enables you to manipulate and distort any website using specific keys on your keyboard",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "http://*/*",
+    "https://*/*",
+    "file://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*",
+        "file://*/*"
+      ],
+      "js": [
+        "code.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "browser_action": {
+      "default_title": "WWW.J.ing",
+      "default_icon": "icon1.png",
+      "default_popup": "popup.html"
+  },
+  "manifest_version": 2
+}
